@@ -26,9 +26,6 @@ class SearchRequest(BaseModel):
 
 import googlemaps
 api_key = os.getenv("GOOGLE_MAPS_API_KEY")
-if not api_key:
-    raise ValueError("Google Maps API key not found. Set it as an environment variable.")
-
 gmaps = googlemaps.Client(key=api_key)
 
 QUERY_PROMPT = """

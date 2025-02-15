@@ -42,7 +42,8 @@ class SearchRequest(BaseModel):
     query: str
 
 import googlemaps
-gmaps = googlemaps.Client(key='AIzaSyDcGkvKU23hRBD5LBmxaOTT2A-2NT4mCk8')
+api_key = os.getenv("GOOGLE_MAPS_API_KEY")
+gmaps = googlemaps.Client(key=api_key)
 
 QUERY_PROMPT = """
 Given a natural language query, decompose the query into a structured query object with the following fields:
